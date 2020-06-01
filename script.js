@@ -1,6 +1,8 @@
 let cells = 1;
 let selectedColor = "red";
 let coloring = false;
+
+// Function to add rows to table
 function addNewRows() {
   let table = document.getElementById("table");
   let row = document.createElement("tr");
@@ -10,24 +12,22 @@ function addNewRows() {
     let cell = document.createElement("td");
     helperFunction(cell);
     row.appendChild(cell);
-    cell.textContent = "1";
   }
 }
 
+// Function to add new columns to table
 function addNewCells() {
   cells++;
   let rows = document.getElementsByClassName("row");
   tr = Array.from(rows);
-  //console.log(tr);
   for (let i = 0; i < tr.length; i++) {
     let cell = document.createElement("td");
     helperFunction(cell);
     tr[i].appendChild(cell);
-    cell.textContent = "1";
   }
-
 }
 
+// Function to remove rows from table
 function removeRow() {
   let rows = document.getElementsByClassName("row");
   tr = Array.from(rows);
@@ -40,6 +40,7 @@ function removeRow() {
   }
 }
 
+// Function to remove columns from table
 function removeCells() {
   if (cells == 1) {
     return;
@@ -55,30 +56,28 @@ function removeCells() {
 // Function to select color and save in variable for later use
 const selectColor = (color) => {
   selectedColor = color;
-  document.getElementById("color-span").innerText = selectedColor.toUpperCase();
-  console.log(selectedColor);
 };
 
 // Helper function to add onlick method to all cells in table
-function helperFunction (cell) {
-    cell.addEventListener("click", changeColor);
-    
-    cell.addEventListener("mousedown", e => {
-        coloring = true;
-    })
-    cell.addEventListener("mousemove", e => {
-        if (coloring) {
-            cell.style.backgroundColor = selectedColor;
-        }
-    })
-    cell.addEventListener("mouseup", e => {
-        if(coloring) {
-            coloring = false;
-        }
-    })
- };
+function helperFunction(cell) {
+  cell.addEventListener("click", changeColor);
+
+  cell.addEventListener("mousedown", (e) => {
+    coloring = true;
+  });
+  cell.addEventListener("mousemove", (e) => {
+    if (coloring) {
+      cell.style.backgroundColor = selectedColor;
+    }
+  });
+  cell.addEventListener("mouseup", (e) => {
+    if (coloring) {
+      coloring = false;
+    }
+  });
+}
 
 // Changes the color of the cell that is clicked
-function changeColor () {
-    this.style.backgroundColor = selectedColor;
-};
+function changeColor() {
+  this.style.backgroundColor = selectedColor;
+}

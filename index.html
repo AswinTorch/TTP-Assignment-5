@@ -6,23 +6,25 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div id="onClick" onClick="addNewRows()">
-      <button>Click me to add a row!</button>
-    </div>
-    <div id="onClick" onClick="addNewCells()">
-      <button>Click me to add cells!</button>
-    </div>
-    <div id="onClick" onClick="removeRow()">
-      <button>Click me to remove rows!</button>
-    </div>
-    <div id="onClick" onClick="removeCells()">
-      <button>Click me to remove cells!</button>
+    <div id="buttons-div">
+      <div id="onClick">
+        <button onClick="addNewRows()">Add a row</button>
+      </div>
+      <div id="onClick">
+        <button onClick="addNewCells()">Add cells</button>
+      </div>
+      <div id="onClick">
+        <button onClick="removeRow()">Remove rows</button>
+      </div>
+      <div id="onClick">
+        <button onClick="removeCells()">Remove cells</button>
+      </div>
     </div>
 
     <div>
       <br />
       <span>Select color:</span>
-      <select id="" onchange="selectColor(this.value)">
+      <select onchange="selectColor(this.value)">
         <option value="red">Red</option>
         <option value="orange">Orange</option>
         <option value="yellow">Yellow</option>
