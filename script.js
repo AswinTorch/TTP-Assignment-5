@@ -1,5 +1,5 @@
 let cells = 1;
-let selectedColor = "lightgrey";
+let selectedColor = "red";
 
 function addNewRows() {
   let table = document.getElementById("table");
@@ -8,6 +8,7 @@ function addNewRows() {
   table.appendChild(row);
   for (let i = 0; i < cells; i++) {
     let cell = document.createElement("td");
+    helperFunction(cell);
     row.appendChild(cell);
     cell.textContent = "1";
   }
@@ -20,9 +21,11 @@ function addNewCells() {
   //console.log(tr);
   for (let i = 0; i < tr.length; i++) {
     let cell = document.createElement("td");
+    helperFunction(cell);
     tr[i].appendChild(cell);
     cell.textContent = "1";
   }
+
 }
 
 function removeRow() {
@@ -49,13 +52,19 @@ function removeCells() {
   }
 }
 
-const selectColor = (colorDiv) => {
-  selectedColor = colorDiv.id;
+// Function to select color and save in variable for later use
+const selectColor = (color) => {
+  selectedColor = color;
   document.getElementById("color-span").innerText = selectedColor.toUpperCase();
   console.log(selectedColor);
 };
 
+// Helper function to add onlick method to all cells in table
+function helperFunction (cell) {
+    cell.addEventListener("click", changeColor);
+ };
+
 // Changes the color of the cell that is clicked
-const changeColor = () => {
-    
-}
+function changeColor () {
+    this.style.backgroundColor = selectedColor;
+};

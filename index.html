@@ -16,22 +16,25 @@
       <button>Click me to remove rows!</button>
     </div>
     <div id="onClick" onClick="removeCells()">
-         <button>Click me to remove cells!</button>
-      </div>
-    <div>
-      <p>Select color: <span id="color-span"></span></p>
-      <div id="color-dropdown">
-        <div class="color" id="red" onclick="selectColor(this)"></div>
-        <div class="color" id="orange" onclick="selectColor(this)"></div>
-        <div class="color" id="yellow" onclick="selectColor(this)"></div>
-        <div class="color" id="green" onclick="selectColor(this)"></div>
-        <div class="color" id="blue" onclick="selectColor(this)"></div>
-        <div class="color" id="purple" onclick="selectColor(this)"></div>
-      </div><br>
-      <table id="table">
-      </table>
-      
-      <script src="script.js"></script>
+      <button>Click me to remove cells!</button>
+    </div>
 
+    <div>
+      <br />
+      <span>Select color:</span>
+      <select id="" onchange="selectColor(this.value)">
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+      </select>
+    </div>
+    <br />
+
+    <table id="table"></table>
+
+    <script src="script.js"></script>
   </body>
 </html>
