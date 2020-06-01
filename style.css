@@ -1,15 +1,3 @@
-.grid-container {
-  height: 90vh;
-  margin: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-.grid-item {
-  font-size: 3rem;
-  text-align: center;
-  padding: 4rem;
-}
 button {
     cursor: pointer;
     border: 12px;
@@ -30,8 +18,8 @@ tr {
     width: inherit;
 }
 td {
-    border: 10px solid black;
-    background-color: beige;
+    border: 5px solid black;
+    background-color: lightgrey;
     height: 20px;
     width: 20px;
 }
