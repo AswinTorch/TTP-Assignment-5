@@ -3,22 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
-      <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-      <div id="onClick" onClick="addNewRows()">
-         <button>Click me to add a row!</button>
+    <div id="onClick" onClick="addNewRows()">
+      <button>Click me to add a row!</button>
+    </div>
+    <div id="onClick" onClick="addNewCells()">
+      <button>Click me to add cells!</button>
+    </div>
+    <div id="onClick" onClick="removeRow()">
+      <button>Click me to remove rows!</button>
+    </div>
+    <div>
+      <p>Select color: <span id="color-span"></span></p>
+      <div id="color-dropdown">
+        <div class="color" id="red" onclick="selectColor(this)"></div>
+        <div class="color" id="orange" onclick="selectColor(this)"></div>
+        <div class="color" id="yellow" onclick="selectColor(this)"></div>
+        <div class="color" id="green" onclick="selectColor(this)"></div>
+        <div class="color" id="blue" onclick="selectColor(this)"></div>
+        <div class="color" id="purple" onclick="selectColor(this)"></div>
       </div>
-      <div id="onClick" onClick="addNewCells()">
-         <button>Click me to add cells!</button>
-      </div>
-      <div id="onClick" onClick="removeRow()">
-         <button>Click me to remove rows!</button>
-      </div>
-      <table id="table">
-      </table>
-      
-      <script src="script.js"></script>
+    </div>
+    <table id="table"></table>
+
+    <script src="script.js"></script>
   </body>
 </html>
-    

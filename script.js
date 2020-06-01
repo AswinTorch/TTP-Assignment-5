@@ -1,4 +1,6 @@
 let cells = 1;
+let selectedColor = "lightgrey";
+
 function addNewRows() {
     let table = document.getElementById("table");
     let row = document.createElement("tr");
@@ -27,4 +29,10 @@ function removeRow() {
     let rows = document.getElementsByClassName("row");
     tr = Array.from(rows);
     tr[tr.length - 1].parentNode.removeChild(tr[tr.length - 1]);
+}
+
+const selectColor = (colorDiv) => {
+    selectedColor = colorDiv.id;
+    document.getElementById("color-span").innerText = selectedColor.toUpperCase();
+    console.log(selectedColor)
 }
