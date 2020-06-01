@@ -15,10 +15,16 @@ function addNewCells() {
     cells++;
     let rows = document.getElementsByClassName("row");
     tr = Array.from(rows);
-    console.log(tr);
+    //console.log(tr);
     for(let i = 0; i < tr.length; i++) {
         let cell = document.createElement("td");
         tr[i].appendChild(cell);
         cell.textContent = "1";
     }
+}
+
+function removeRow() {
+    let rows = document.getElementsByClassName("row");
+    tr = Array.from(rows);
+    tr[tr.length - 1].parentNode.removeChild(tr[tr.length - 1]);
 }
