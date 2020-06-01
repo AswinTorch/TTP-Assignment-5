@@ -10,3 +10,15 @@ function addNewRows() {
         cell.textContent = "1";
     }
 }
+
+function addNewCells() {
+    cells++;
+    let rows = document.getElementsByClassName("row");
+    tr = Array.from(rows);
+    console.log(tr);
+    for(let i = 0; i < tr.length; i++) {
+        let cell = document.createElement("td");
+        tr[i].appendChild(cell);
+        cell.textContent = "1";
+    }
+}
