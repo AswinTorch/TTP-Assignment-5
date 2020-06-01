@@ -15,6 +15,9 @@
     <div id="onClick" onClick="removeRow()">
       <button>Click me to remove rows!</button>
     </div>
+    <div id="onClick" onClick="removeCells()">
+         <button>Click me to remove cells!</button>
+      </div>
     <div>
       <p>Select color: <span id="color-span"></span></p>
       <div id="color-dropdown">
@@ -25,9 +28,10 @@
         <div class="color" id="blue" onclick="selectColor(this)"></div>
         <div class="color" id="purple" onclick="selectColor(this)"></div>
       </div>
-    </div>
-    <table id="table"></table>
+      <table id="table">
+      </table>
+      
+      <script src="script.js"></script>
 
-    <script src="script.js"></script>
   </body>
 </html>
