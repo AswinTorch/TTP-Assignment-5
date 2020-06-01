@@ -19,7 +19,7 @@ function addNewRows() {
 function addNewCells() {
   cells++;
   let rows = document.getElementsByClassName("row");
-  tr = Array.from(rows);
+  tr = [...rows];
   for (let i = 0; i < tr.length; i++) {
     let cell = document.createElement("td");
     helperFunction(cell);
@@ -30,7 +30,7 @@ function addNewCells() {
 // Function to remove rows from table
 function removeRow() {
   let rows = document.getElementsByClassName("row");
-  tr = Array.from(rows);
+  tr = [...rows];
   if (tr.length == 0) {
     return;
   }
@@ -47,7 +47,7 @@ function removeCells() {
   }
   cells--;
   let rows = document.getElementsByClassName("row");
-  tr = Array.from(rows);
+  tr = [...rows];
   for (let i = 0; i < tr.length; i++) {
     tr[i].removeChild(tr[i].lastChild);
   }
@@ -60,6 +60,7 @@ const selectColor = (color) => {
 
 // Helper function to add onlick method to all cells in table
 function helperFunction(cell) {
+  cell.classList.add("uncolored");
   cell.addEventListener("click", changeColor);
 
   cell.addEventListener("mousedown", (e) => {
@@ -77,7 +78,22 @@ function helperFunction(cell) {
   });
 }
 
-// Changes the color of the cell that is clicked
+// Changes the color of the cell that is clicked to selected color
 function changeColor() {
   this.style.backgroundColor = selectedColor;
+  this.classList.remove("uncolored");
+}
+
+// Changes the color of all uncolored cells to selected color
+function fillUncolored() {
+  let cells = document.getElementsByTagName("td");
+  let cls = [...cells];
+  let uncoloredCells = cls.filter((cell) => {
+    return cell.classList.contains("uncolored");
+  });
+
+  uncoloredCells.forEach((cell) => {
+    cell.style.backgroundColor = selectedColor;
+    cell.classList.remove("uncolored");
+  });
 }
