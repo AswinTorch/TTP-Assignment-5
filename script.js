@@ -1,6 +1,6 @@
 let cells = 1;
 let selectedColor = "red";
-
+let coloring = false;
 function addNewRows() {
   let table = document.getElementById("table");
   let row = document.createElement("tr");
@@ -62,6 +62,20 @@ const selectColor = (color) => {
 // Helper function to add onlick method to all cells in table
 function helperFunction (cell) {
     cell.addEventListener("click", changeColor);
+    
+    cell.addEventListener("mousedown", e => {
+        coloring = true;
+    })
+    cell.addEventListener("mousemove", e => {
+        if (coloring) {
+            cell.style.backgroundColor = selectedColor;
+        }
+    })
+    cell.addEventListener("mouseup", e => {
+        if(coloring) {
+            coloring = false;
+        }
+    })
  };
 
 // Changes the color of the cell that is clicked
