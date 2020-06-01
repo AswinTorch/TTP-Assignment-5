@@ -107,3 +107,13 @@ function fillAll() {
     cell.classList.remove("uncolored");
   });
 }
+
+// Clears color of all cells
+function clearAll() {
+    let cells = document.getElementsByTagName("td");
+    let cls = [...cells];
+    cls.forEach((cell) => {
+      cell.style.backgroundColor = "whitesmoke";
+      cell.classList.add("uncolored");
+    });
+  }
