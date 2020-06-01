@@ -23,34 +23,3 @@ td {
     height: 20px;
     width: 20px;
 }
-
-#color-dropdown {
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
-}
-
-.color {
-    border: 1px solid black;
-    height: 30px;
-    width: 30px;
-}
-
-#red {
-    background-color: red;
-}
-#orange {
-    background-color: orange;
-}
-#yellow {
-    background-color: yellow;
-}
-#green {
-    background-color: green;
-}
-#blue {
-    background-color: blue;
-}
-#purple {
-    background-color: purple;
-}
