@@ -97,3 +97,13 @@ function fillUncolored() {
     cell.classList.remove("uncolored");
   });
 }
+
+// Changes the color of all cells in table to selected color
+function fillAll() {
+  let cells = document.getElementsByTagName("td");
+  let cls = [...cells];
+  cls.forEach((cell) => {
+    cell.style.backgroundColor = selectedColor;
+    cell.classList.remove("uncolored");
+  });
+}
